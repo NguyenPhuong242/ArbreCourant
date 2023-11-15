@@ -13,33 +13,31 @@ public class randomTree implements MinSpanningTree {
         // arbre couvrant de poids minimum (pour ce choix de poids). Pour la deuxième
         // étape, utiliser l’algorithme de Prim ou celui de Kruskal par exemple
 
-        private UndirectedGraph graph;
-        private ArrayList<Arc> tree;
-        private List<Edge> edges;
+        private final UndirectedGraph graph;
+        private final ArrayList<Arc> tree;
+        private final List<Edge> edges;
 
         public randomTree(UndirectedGraph graph) {
                 this.graph = graph;
                 this.edges = new LinkedList<Edge>();
-                Iterator<Edge> iterator = this.graph.edges().iterator();
-                while (iterator.hasNext()) {
-                        Edge currentEdge = iterator.next();
-                        edges.add(currentEdge);
-                }
+            for (Edge currentEdge : this.graph.edges()) {
+                edges.add(currentEdge);
+            }
                 this.tree = new ArrayList<>(graph.order());
         }
 
-        private class Part {
+        private static class Part {
                 int parent, rank;
         }
 
-        private int find(Part Parts[], int i) {
+        private int find(Part[] Parts, int i) {
                 if (Parts[i].parent != i)
                         Parts[i].parent = find(Parts, Parts[i].parent);
 
                 return Parts[i].parent;
         }
 
-        private void Union(Part Parts[], int x, int y) {
+        private void Union(Part[] Parts, int x, int y) {
                 int xroot = find(Parts, x);
                 int yroot = find(Parts, y);
 
@@ -58,13 +56,13 @@ public class randomTree implements MinSpanningTree {
                 int V = graph.order();
                 int e = 0;
                 int i = 0;
-                Edge result[] = new Edge[V];
+                Edge[] result = new Edge[V];
                 for (i = 0; i < V; ++i)
                         result[i] = new Edge(0, 0);
 
                 Arrays.sort(edges.toArray());
 
-                Part Parts[] = new Part[V];
+                Part[] Parts = new Part[V];
                 for (i = 0; i < V; ++i)
                         Parts[i] = new Part();
 

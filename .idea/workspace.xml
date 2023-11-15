@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30e7030c-a00f-40de-b346-1001b03d2717" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/UndirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/UndirectedGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/search/FifoFrontier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/search/FifoFrontier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/AldousBroder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/AldousBroder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/BFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/MinSpanningTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/MinSpanningTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/RandomInsert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/Wilson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/Wilson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/randomTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/graph/randomTree/randomTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univamu/visualizer/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/univamu/visualizer/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +48,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2Xi2fK5dcSasfTOD4iCEfspKVK8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -60,6 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Khanh Phuong/PROJET/tp-2-algo-2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -73,7 +76,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.tp-2-algo-2 [runMain]">
+  <component name="RunManager" selected="Gradle.tp-2-algo-2 [run]">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.univamu.graph.Main" />
+      <module name="RandomTree.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.univamu.graph.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="tp-2-algo-2 [runMain]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -120,8 +136,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.tp-2-algo-2 [runMain]" />
         <item itemvalue="Gradle.tp-2-algo-2 [run]" />
+        <item itemvalue="Gradle.tp-2-algo-2 [runMain]" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -134,6 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699097681790</updated>
       <workItem from="1699097682871" duration="1279000" />
+      <workItem from="1700032465306" duration="5101000" />
     </task>
     <servers />
   </component>

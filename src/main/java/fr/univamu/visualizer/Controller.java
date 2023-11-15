@@ -2,10 +2,12 @@ package fr.univamu.visualizer;
 
 import fr.univamu.graph.Edge;
 import fr.univamu.graph.EmbeddedGraph;
+import fr.univamu.graph.UndirectedGraph;
 import fr.univamu.graph.generators.Complete;
 import fr.univamu.graph.generators.ErdosRenyi;
 import fr.univamu.graph.generators.Grid;
 import fr.univamu.graph.generators.Lollipop;
+import fr.univamu.graph.randomTree.Wilson;
 import fr.univamu.graph.search.Search;
 import fr.univamu.helpers.Point;
 import javafx.fxml.FXML;
@@ -13,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -25,26 +28,29 @@ public class Controller implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    // drawErdosReniy();
+    drawErdosReniy();
     // drawGrid();
     // drawLollipop();
-    drawComplete();
+    //drawComplete();
   }
 
   private void drawErdosReniy() {
     EmbeddedGraph graph = new ErdosRenyi(30,0.3);
     Search search = Search.breadthFirstSearch(graph.graph());
     search.searchFrom(0);
-    Set<Edge> edges = search.edges();
+    Set<Edge> edges = new HashSet<>(new Wilson(graph.graph()).getTree(graph.graph(),0).stream().map(arc->new Edge(arc.getSource(),arc.getDest())).toList());
+    //search.edges();
     Embedding layout =
         graph.layout().scale(300).translate(Point.cartesian(500,400));
     drawGraphAndSubGraph(graph, edges, layout);
   }
   private void drawComplete() {
-    EmbeddedGraph graph = new Complete(50);
+    EmbeddedGraph graph = new Complete(10);
     Search search = Search.depthFirstSearch(graph.graph());
     search.searchFrom(0);
-    Set<Edge> edges = search.edges();
+    Set<Edge> edges =new HashSet<>(new Wilson(graph.graph()).getTree(graph.graph(),0).stream().map(arc->new Edge(arc.getSource(),arc.getDest())).toList());
+            //Wilson.getTree(graph.graph(),0).stream().map(arc->new Edge(arc.getSource(),arc.getDest())).toList());
+            //search.edges();
     Embedding layout =
         graph.layout().scale(300).translate(Point.cartesian(500,400));
     drawGraphAndSubGraph(graph, edges, layout);
@@ -73,7 +79,8 @@ public class Controller implements Initializable {
     EmbeddedGraph lollipop = new Lollipop(100);
     Search search = Search.depthFirstSearch(lollipop.graph());
     search.searchFrom(83);
-    Set<Edge> edges = search.edges();
+    Set<Edge> edges = new HashSet<>(new Wilson(lollipop.graph()).getTree(lollipop.graph(),0).stream().map(arc->new Edge(arc.getSource(),arc.getDest())).toList());
+    //search.edges();
     Embedding layout =
         lollipop.layout()
             .scale(180)
@@ -95,6 +102,4 @@ public class Controller implements Initializable {
     );
     treeDrawer.draw(canvas.getGraphicsContext2D());
   }
-
-
 }

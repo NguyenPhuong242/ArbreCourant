@@ -9,8 +9,8 @@ import fr.univamu.graph.search.Path;
 //parcours en largeur
 public class BFS {
 
-    private UndirectedGraph graph;
-    private LinkedList<Integer> sommets;
+    private final UndirectedGraph graph;
+    private final LinkedList<Integer> sommets;
 
     public BFS(UndirectedGraph graph, int start) {
         this.graph = graph;

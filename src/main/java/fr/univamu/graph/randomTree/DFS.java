@@ -6,10 +6,10 @@ import fr.univamu.graph.search.Path;
 
 //cette classe est utilisée pour parcourir un graphe en profondeur
 public class DFS {
-    private UndirectedGraph graph;
-    private boolean[] marked;
-    private int[] edgeTo;
-    private int start;
+    private final UndirectedGraph graph;
+    private final boolean[] marked;
+    private final int[] edgeTo;
+    private final int start;
 
     public DFS(UndirectedGraph graph, int start) {
         this.graph = graph;
@@ -35,7 +35,7 @@ public class DFS {
 
     //renvoie le chemin entre le sommet de départ et le sommet v
 
-    public Iterable<Integer> pathTo(int v) {
+    public Iterable pathTo(int v) {
         if (!hasPathTo(v)) {
             return null;
         }
@@ -43,7 +43,7 @@ public class DFS {
         for (int x = v; x != start; x = edgeTo[x]) {
             path = path.add(new Edge(x, edgeTo[x]));
         }
-        return (Iterable) path;
+        return path;
     }
 
     
