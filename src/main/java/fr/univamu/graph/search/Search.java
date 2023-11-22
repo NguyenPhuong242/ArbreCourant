@@ -81,5 +81,9 @@ public class Search {
 		}
 	}
 
+	public int next() {
+		return frontier.poll().extremity();
+	}
+
 
 }

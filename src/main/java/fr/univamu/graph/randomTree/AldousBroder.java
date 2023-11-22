@@ -2,6 +2,8 @@ package fr.univamu.graph.randomTree;
 import java.util.*;
 
 import fr.univamu.graph.UndirectedGraph;
+import fr.univamu.graph.search.LifoFrontier;
+import fr.univamu.graph.search.Search;
 
 
 //Algorithme d’Aldous-Broder
@@ -9,6 +11,8 @@ public class AldousBroder implements MinSpanningTree{
 
     UndirectedGraph graph;
     ArrayList<Arc> tree;
+
+    Random random = new Random();
 
     HashMap<Integer, Integer> sommetVisits;
 
@@ -25,7 +29,9 @@ public class AldousBroder implements MinSpanningTree{
         int sommetActuel = (int)(Math.random() * graph.order());
         sommetVisits.put(sommetActuel, 1);
         while(!allVisited()){
-            int sommetSuivant = (int)(Math.random() * graph.order());
+            List<Integer> neighbors = new ArrayList<>();
+            neighbors.addAll(neighbors);
+            int sommetSuivant = neighbors.get(random.nextInt(neighbors.size()));
             if(sommetVisits.get(sommetSuivant) == 0){
                 sommetVisits.put(sommetSuivant, 1);
                 tree.add(new Arc(sommetActuel, sommetSuivant));
@@ -33,6 +39,9 @@ public class AldousBroder implements MinSpanningTree{
             sommetActuel = sommetSuivant;
         }
     }
+
+
+
 
     private boolean allVisited(){
         for(int i = 0; i < graph.order(); i++){
